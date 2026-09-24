@@ -1,0 +1,42 @@
+{
+  "name": "@mmmatvey122/k8s-logs-menu",
+  "version": "1.0.1",
+  "description": "Выгрузка логов всех подов микросервиса из нескольких кластеров и сегментов, плюс меню нод и подов для OpenLens",
+  "renderer": "dist/renderer.js",
+  "engines": {
+    "node": ">=16",
+    "lens": "^6.3.0"
+  },
+  "scripts": {
+    "build": "npm run clean && npx webpack",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "dev": "npx webpack --watch",
+    "lint": "npx eslint .",
+    "test": "npx jest --passWithNoTests --env=jsdom src "
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@k8slens/extensions": "^6.3.0",
+    "@types/react": "^17.0.52",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "eslint": "^8.31.0",
+    "ts-loader": "^9.4.2",
+    "webpack-cli": "^5.0.1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "kubernetes",
+    "openlens",
+    "lens",
+    "extension",
+    "logs",
+    "pods",
+    "menu"
+  ],
+  "main": "dist/main.js",
+  "author": {
+    "name": "mmmatvey122"
+  }
+}
